@@ -53,7 +53,7 @@ async function _runModel (session, file, setOutputMap) {
     const fd= new FormData();
     fd.append=('image', file, file.name)
     
-    axios.post('')
+    axios.post("http://10.21.198.132:5000/predict", fd);
     // const data = preprocess(input);
     // const inputTensor = new Tensor(data, 'float32', [1, 3, width, height]);
     // await wait(0);

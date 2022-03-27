@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 11:38:54
- * @FilePath: /react-ml-app/frontend/src/components/App.js
+ * @LastEditTime: 2022-03-27 15:32:44
+ * @FilePath: /KDS/frontend/src/components/App.js
  */
 import React from 'react';
 import Classifier from './Classifier'
@@ -49,46 +49,30 @@ function App() {
     const classes = useStyles();
     return (
       <div className={classes.root}>
-        
         {/* App Bar  */}
         <AppBar position="static">
           <Toolbar>
+            <img src="logo192.png" height="50px" align="center" />
             <Typography variant="h6" className={classes.title}>
               Keratitis Diagnosis System
             </Typography>
           </Toolbar>
         </AppBar>
-        
-        <Container className={classes.content}>
 
+        <Container className={classes.content}>
           <Classifier />
 
           {/* <SendImage /> */}
         </Container>
         <Container className={classes.content}>
-
-
           {/* Foot Expansion */}
           <Expansion classes={classes} />
 
           {/* Footer */}
           <footer className={classes.footer}>
-            <Button
-              className={classes.button}
-            >
-              Privacy Policy
-            </Button>
-            <Button
-              className={classes.button}
-
-            >
-              KDS - BUPT 2022
-            </Button>
-            <Button
-              className={classes.button}
-            >
-              CONTACT
-            </Button>
+            <Button className={classes.button}>Privacy Policy</Button>
+            <Button className={classes.button}>KDS - BUPT 2022</Button>
+            <Button className={classes.button}>CONTACT</Button>
           </footer>
         </Container>
       </div>

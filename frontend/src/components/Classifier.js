@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 12:57:30
- * @FilePath: /react-ml-app/frontend/src/components/Classifier.js
+ * @LastEditTime: 2022-03-27 15:33:15
+ * @FilePath: /KDS/frontend/src/components/Classifier.js
  */
 import React, {useRef, useEffect, useState} from 'react';
 import Predictions from './Predictions';
@@ -50,7 +50,6 @@ export default function Classifier() {
     useEffect(() => {
         if (!loaded || !data) return;
         runModel(session, data, setOutputMap);
-
     }, [loaded, data]); // runs when loaded or data changes    
     
     const outputData = outputMap && outputMap.values().next().value.data;
