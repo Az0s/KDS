@@ -1,8 +1,8 @@
 '''
 Date: 2022-03-26 14:01:38
 LastEditors: Azus
-LastEditTime: 2022-03-26 22:12:10
-FilePath: /react-ml-app/app.py
+LastEditTime: 2022-03-28 21:07:31
+FilePath: /KDS/app.py
 '''
 import _thread
 from backend import *
@@ -22,6 +22,6 @@ app = create_app()
 if __name__ =="__main__":
     # _thread.start_new_thread(get_mode, ())
     
-    app.run(debug=False)
+    app.run(debug=True)
 
     # app.run(debug=True)

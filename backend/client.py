@@ -1,8 +1,15 @@
+'''
+Date: 2022-03-25 13:07:06
+LastEditors: Azus
+LastEditTime: 2022-03-27 21:23:27
+FilePath: /KDS/pyqt_deploy/client.py
+'''
 import requests
 import time
 
 # Initialize the keras REST API endpoint URL.
-REST_API_URL = 'http://127.0.0.1:5000/predict'
+REST_API_URL = 'http://101.43.232.154:7000/predict'
+REST_API_URL = 'http://101.43.232.154:7000/predict'
 
 
 def predict_result(image_path):
@@ -26,7 +33,7 @@ def predict_result(image_path):
 
 if __name__ == '__main__':
     t1 = time.time()
-    img_path = 'test2.JPG'
+    img_path = './amb.JPG'
     predict_result(img_path)
     t2 = time.time()
     print(t2 - t1)

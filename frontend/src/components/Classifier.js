@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 15:33:15
+ * @LastEditTime: 2022-03-27 19:23:28
  * @FilePath: /KDS/frontend/src/components/Classifier.js
  */
 import React, {useRef, useEffect, useState} from 'react';
@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {InfoSnackbar, LoadingSnackbar } from './Snackbars'
 import DropImageCard from './DropImageCard'
 import { fetchImage, makeSession, loadModel, runModel } from './utils'
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 const session = makeSession();
 
@@ -26,6 +26,7 @@ export default function Classifier() {
     const [loaded, setLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     
+    //v1
     // const startLoadModel = async () => {
     //     if (isLoading || loaded) { return; }
     //     setIsLoading(true);
@@ -38,21 +39,25 @@ export default function Classifier() {
     const canvas = useRef(null)
     const [data, setData] = useState(null)
     
+    // V2   
     useEffect(() => {
-        if (file)   runModel(session, file, setOutputMap);
+        if (file)   runModel(session, file, setOutput);
     }, [file])
-    // useEffect(() => {
-    //     if (file) fetchImage(file, canvas, setData);
-    // }, [file])
 
-    const [outputMap, setOutputMap] = useState(null);
+    // V1
+    useEffect(() => {
+        if (file) fetchImage(file, canvas, setData);
+    }, [file])
 
+    // const [outputMap, setOutputMap] = useState(null);
+    
+    const [output, setOutput] = useState(null)
     useEffect(() => {
         if (!loaded || !data) return;
-        runModel(session, data, setOutputMap);
+        runModel(session, data, setOutput);
     }, [loaded, data]); // runs when loaded or data changes    
     
-    const outputData = outputMap && outputMap.values().next().value.data;
+    // const outputData = outputMap && outputMap.values().next().value.data;
     
     const classes = useStyles();
 
@@ -66,18 +71,22 @@ export default function Classifier() {
                 { loaded && data && !outputMap && <LoadingSnackbar message="Running model..." /> }
                 { loaded && !file && <InfoSnackbar message="Add or take a picture..." /> }
                 { !!file && !data && <LoadingSnackbar message="Loading image..." /> }
-            </Grid> */}
-            
+            </Grid>
+             */}
+
+            {/* V2 */}
+
+                        
             <Grid item>
                 <DropImageCard setFile={setFile} canvasRef={canvas} fileLoaded={!!file} />
                 
-                { data && !outputMap && <LoadingSnackbar message="Running model..." /> }
+                {/* { data && !output && <LoadingSnackbar message="Running model..." /> } */}
                 { !file && <InfoSnackbar message="Add or take a picture..." /> }
-                {/* { !!file && !data && <LoadingSnackbar message="Loading image..." /> } */}
+                { !!file && !output && <LoadingSnackbar message="Running model..." /> } 
             </Grid>
 
             <Grid item>
-                <Predictions output={outputData} />
+                <Predictions output={output} />
             </Grid>
         </Grid>
     </div>

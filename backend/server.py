@@ -1,11 +1,15 @@
+'''
+Date: 2022-03-25 11:30:38
+LastEditors: Azus
+LastEditTime: 2022-03-28 23:37:03
+FilePath: /KDS/pyqt_deploy/server.py
+'''
 import io
 from PIL import Image
 from flask import Flask, request, jsonify
-
 import torch
 import json
 import time
-
 from transform import get_test_transform
 
 with open('label.json', 'rb') as f:

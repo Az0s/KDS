@@ -1,3 +1,9 @@
+/*
+ * @Date: 2022-03-25 19:03:59
+ * @LastEditors: Azus
+ * @LastEditTime: 2022-03-27 19:04:53
+ * @FilePath: /KDS/frontend/src/components/Scorecard.js
+ */
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
@@ -20,7 +26,9 @@ const useStyles = makeStyles({
 });
 
 export default function Scorecard({items}) {
+    
     const classes = useStyles();
+    console.log(items)
     return <Card className={classes.card}><List dense>
         {items.map(({avatar, name, percentage}) => {
             const id = `${name}-${percentage}`

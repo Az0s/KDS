@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 15:32:44
+ * @LastEditTime: 2022-03-27 19:23:38
  * @FilePath: /KDS/frontend/src/components/App.js
  */
 import React from 'react';
@@ -14,7 +14,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Expansion from './Expansion'
 import Button from '@material-ui/core/Button';
-import SendImage from "./SendImage";
+// import SendImage from "./SendImage";
 
 const useStyles = makeStyles(theme => ({
     root: {
