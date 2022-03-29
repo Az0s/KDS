@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 19:23:38
+ * @LastEditTime: 2022-03-29 15:55:22
  * @FilePath: /KDS/frontend/src/components/App.js
  */
 import React from 'react';
@@ -14,7 +14,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Expansion from './Expansion'
 import Button from '@material-ui/core/Button';
+import { backend } from 'onnxjs';
 // import SendImage from "./SendImage";
+
+const backend_url = "http://10.21.198.132:5000/predict";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -52,7 +55,11 @@ function App() {
         {/* App Bar  */}
         <AppBar position="static">
           <Toolbar>
-            <img src="logo192.png" height="50px" align="center" />
+            <img
+              src="https://s2.loli.net/2022/03/29/r7CHpdZWF6KlXaf.png"
+              height="50px"
+              align="center"
+            />
             <Typography variant="h6" className={classes.title}>
               Keratitis Diagnosis System
             </Typography>
@@ -60,7 +67,7 @@ function App() {
         </AppBar>
 
         <Container className={classes.content}>
-          <Classifier />
+          <Classifier predict_url={backend_url} />
 
           {/* <SendImage /> */}
         </Container>

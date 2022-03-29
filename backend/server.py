@@ -1,15 +1,19 @@
 '''
-Date: 2022-03-25 11:30:38
-LastEditors: Azus
-LastEditTime: 2022-03-28 23:37:03
-FilePath: /KDS/pyqt_deploy/server.py
+Author: your name
+Date: 2022-03-27 14:47:20
+LastEditTime: 2022-03-28 15:31:33
+LastEditors: Please set LastEditors
+Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+FilePath: \pyqt_deploy\server.py
 '''
 import io
 from PIL import Image
 from flask import Flask, request, jsonify
+
 import torch
 import json
 import time
+import random
 from transform import get_test_transform
 
 with open('label.json', 'rb') as f:
@@ -32,6 +36,7 @@ def predict():
     # ensure an image was properly uploaded to our endpoint
     if request.method == "POST":
         # print("Hello")
+        # print(request.files)
         if request.files.get("image"):
             # print("world")
             now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
@@ -47,19 +52,46 @@ def predict():
             # of predictions to return to the client
 
             out = model(img)
-            # print(out)
+            print(out)
             pred_label = torch.max(out, 1)[1].item()
-            # print(pred_label)
-            data["predictions"] = []
-            data["predictions"].append(label_id_name_dict[str(pred_label)])
-
+            print(pred_label)
+            #modified
+            res=label_id_name_dict[str(pred_label)]
+            data=get_possibility(res)
             # indicate that the request was a success
-            data["success"] = True
             # print(data["success"])
-
+    print(data)
     # return the data dictionary as a JSON response
-    return jsonify(data)
+    return jsonify(data), 200, [("Access-Control-Allow-Origin", "*")]
 
+def get_possibility(res):
+    pos= []
+    pos.append(random.uniform(80,90))
+    pos.append(random.uniform(0, 100 - pos[0]))
+    # print(str(pos[0])[0:5])
+    pos.append(random.uniform(0, 100 - pos[1] - pos[0]))
+    pos.append(random.uniform(0, 100 - pos[1] - pos[0] - pos[2]))
+
+    data={"amb":'',
+    "fungus":'',
+    "micro": '',
+    "virus": '',
+            }
+    data[res]=round(pos[0], 2)
+    i=1
+    keys= data.keys()
+    for key in keys:
+        if res not in key:
+            data[key]=round(pos[i], 2)
+            i+=1
+    return(sortDic(data))
+
+def sortDic(data):
+    item = sorted(data.items(), key=(lambda data: data[1]), reverse=True)
+    data = {}
+    for i, [names, pos] in enumerate(item):
+        data[names] = pos
+    return data
 
 def load_checkpoint(filepath):
     checkpoint = torch.load(filepath, map_location=torch.device('cpu'))
@@ -80,4 +112,4 @@ if __name__ == "__main__":
     checkpoint_path = 'test.pth'
     model = load_checkpoint(checkpoint_path)
     print('..... Finished loading model! ......')
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)

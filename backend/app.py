@@ -1,14 +1,14 @@
 '''
 Date: 2022-03-25 20:20:08
 LastEditors: Azus
-LastEditTime: 2022-03-29 10:52:33
+LastEditTime: 2022-03-29 11:30:32
 FilePath: /KDS/backend/app.py
 '''
 from re import template
 from flask import Flask, render_template 
 import reverseProxy as rP
-# app=Flask(__name__, static_url_path='/static/build', template_folder='templates' )
-app=Flask(__name__)
+app=Flask(__name__, template_folder='templates' )
+# app=Flask(__name__)
 
 ENV = "prds"
 DEV_SERVER_URL = 'http://localhost:3000/'

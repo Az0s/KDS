@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 19:23:28
+ * @LastEditTime: 2022-03-29 15:53:46
  * @FilePath: /KDS/frontend/src/components/Classifier.js
  */
 import React, {useRef, useEffect, useState} from 'react';
@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import {InfoSnackbar, LoadingSnackbar } from './Snackbars'
 import DropImageCard from './DropImageCard'
-import { fetchImage, makeSession, loadModel, runModel } from './utils'
+import { fetchImage, makeSession, runModel } from './utils'
 // import Button from '@material-ui/core/Button';
 
 const session = makeSession();
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }));
   
 
-export default function Classifier() {
+export default function Classifier(predict_url) {
     const [loaded, setLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     
@@ -54,7 +54,7 @@ export default function Classifier() {
     const [output, setOutput] = useState(null)
     useEffect(() => {
         if (!loaded || !data) return;
-        runModel(session, data, setOutput);
+        runModel(predict_url, session, data, setOutput);
     }, [loaded, data]); // runs when loaded or data changes    
     
     // const outputData = outputMap && outputMap.values().next().value.data;
