@@ -63,7 +63,7 @@ async function _runModel(session, file, setOutput) {
   const fd = new FormData();
   fd.append("image", file);
   console.log(fd);
-  axios.post("http://10.21.198.132:5000/predict", fd).then((res) => {
+  axios.post("http://101.43.232.154:8080/predict", fd).then((res) => {
     console.log(res.data);
     setOutput(res.data);
   });

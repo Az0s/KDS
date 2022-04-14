@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 19:23:38
+ * @LastEditTime: 2022-04-14 11:45:08
  * @FilePath: /KDS/frontend/src/components/App.js
  */
 import React from 'react';
@@ -52,7 +52,11 @@ function App() {
         {/* App Bar  */}
         <AppBar position="static">
           <Toolbar>
-            <img src="logo192.png" height="50px" align="center" />
+            <img
+              src="https://s1.ax1x.com/2022/04/14/Ll9ERS.png"
+              height="50px"
+              align="center"
+            />
             <Typography variant="h6" className={classes.title}>
               Keratitis Diagnosis System
             </Typography>
@@ -61,7 +65,6 @@ function App() {
 
         <Container className={classes.content}>
           <Classifier />
-
           {/* <SendImage /> */}
         </Container>
         <Container className={classes.content}>
