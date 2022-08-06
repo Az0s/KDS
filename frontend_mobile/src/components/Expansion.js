@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-25 19:24:20
  * @LastEditors: Azus
- * @LastEditTime: 2022-03-27 23:53:22
+ * @LastEditTime: 2022-04-16 12:38:50
  * @FilePath: /KDS/frontend/src/components/Expansion.js
  */
 import React from 'react'
@@ -45,6 +45,7 @@ const Expansion = ({classes}) => {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      
       <ExpansionPanel>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
@@ -82,6 +83,7 @@ const Expansion = ({classes}) => {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      
       <ExpansionPanel>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}

@@ -95,9 +95,6 @@ def load_checkpoint(filepath):
     model.eval()
     return model
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 # if this is the main thread of execution first load the model and
 # then start the server
@@ -107,4 +104,4 @@ if __name__ == "__main__":
     checkpoint_path = 'test.pth'
     model = load_checkpoint(checkpoint_path)
     print('..... Finished loading model! ......')
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=False)

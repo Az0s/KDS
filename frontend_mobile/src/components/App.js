@@ -1,10 +1,10 @@
 /*
  * @Date: 2022-03-25 19:03:59
  * @LastEditors: Azus
- * @LastEditTime: 2022-04-14 11:45:08
+ * @LastEditTime: 2022-04-16 12:38:33
  * @FilePath: /KDS/frontend/src/components/App.js
  */
-import React from 'react';
+import React, { useState } from 'react';
 import Classifier from './Classifier'
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -14,6 +14,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Expansion from './Expansion'
 import Button from '@material-ui/core/Button';
+import  Popover  from './Popover';
+
 // import SendImage from "./SendImage";
 
 const useStyles = makeStyles(theme => ({
@@ -46,6 +48,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function App() {
+    const type_info = {
+      amb: "Im amb",
+      fungus: "Im fungus",
+      micro: "Im micro",
+      virus: "Im virus",
+    };
+    const [open, setOpen] = useState(false)
+    const handleOpen=()=>{
+      setOpen(!open)
+    }
+    const handleClose=()=>{
+      setOpen(false)
+    }
     const classes = useStyles();
     return (
       <div className={classes.root}>
@@ -78,6 +93,7 @@ function App() {
             <Button className={classes.button}>CONTACT</Button>
           </footer>
         </Container>
+        {/* <Button onClick={handleOpen}>Click to Open<Button/> */}
       </div>
     );
 }

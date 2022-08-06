@@ -1,8 +1,8 @@
 '''
 Date: 2022-03-25 11:30:38
 LastEditors: Azus
-LastEditTime: 2022-03-28 23:37:03
-FilePath: /KDS/pyqt_deploy/server.py
+LastEditTime: 2022-08-06 14:40:01
+FilePath: /KDS/backend/server.py
 '''
 import io
 from PIL import Image
