@@ -1,6 +1,6 @@
 {
   "name": "kds",
-  "homepage": ".",
+  "homepage": "http://.",
   "license": "MIT",
   "scripts": {
     "build": "react-scripts build",
@@ -48,5 +48,16 @@
   "engines": {
     "node": ">=10",
     "npm": ">=6"
+  },
+  "version": "1.0.0",
+  "description": "kds repository, full frontend and backend code ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Az0s/KDS.git"
+  },
+  "author": "az0s",
+  "bugs": {
+    "url": "https://github.com/Az0s/KDS/issues"
   }
 }
