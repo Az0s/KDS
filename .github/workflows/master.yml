@@ -9,7 +9,8 @@ jobs:
           SSH_KEY: ${{secrets.SSH_KEY}}
           SERVER_IP: ${{secrets.SERVER_IP}}
     steps:
-        - run: cd fontend
+        - run: ls
+        - run: cd ./fontend
         - uses: actions/checkout@v2
         - name: Use Node.js 16
           uses: actions/setup-node@v2
