@@ -11,19 +11,13 @@ import {
   CInputGroup,
   CFormSwitch,
   CFormSelect,
-  CFormTextarea,
   CFormFeedback,
   CRow,
 } from '@coreui/react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 const FormControl = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit } = useForm()
   const onSubmit = (data) => {
     console.log(data)
     axios
