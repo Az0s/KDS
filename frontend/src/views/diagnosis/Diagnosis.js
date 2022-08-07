@@ -39,7 +39,7 @@ const Diagnosis = () => {
       }
     })
     axios
-      .post('/predict', formData, {
+      .post('/api/predict', formData, {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
@@ -69,7 +69,7 @@ const Diagnosis = () => {
                   {/* <DocsExample href="forms/form-control#file-input"> */}
 
                   <CCol className="mb-3" md={6}>
-                    <CFormLabel htmlFor="formName">SOME TEXT</CFormLabel>
+                    <CFormLabel htmlFor="formName">Name this diagnosis:</CFormLabel>
                     <CInputGroup className="has-validation">
                       <CFormInput
                         {...register('name')}
@@ -95,7 +95,7 @@ const Diagnosis = () => {
                   </CCol>
 
                   <CCol className="mb-3" md={6}>
-                    <CFormLabel htmlFor="formFile">Default file input example</CFormLabel>
+                    <CFormLabel htmlFor="formFile">Upload image:</CFormLabel>
                     <CFormInput {...register('image')} type="file" id="formFile" />
                   </CCol>
                   {/* <div className="mb-3">
@@ -103,7 +103,11 @@ const Diagnosis = () => {
                 <CFormInput type="file" id="formFileMultiple" multiple />
               </div> */}
                   <CCol md={5}>
-                    <CFormSwitch {...register('shareSwitch')} label="Share Data" id="formSwitch" />
+                    <CFormSwitch
+                      {...register('shareSwitch')}
+                      label="Share Data with us"
+                      id="formSwitch"
+                    />
                   </CCol>
                   <CCol md={7}>
                     <br />

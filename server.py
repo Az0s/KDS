@@ -17,7 +17,9 @@ input_size = 300
 
 app = Flask(__name__)
 
-
+@app.route("/", methods=["GET", "POST"])
+def index():
+    return "HELLODATA"
 @app.route("/predict", methods=["POST"])
 def predict():
     # initialize the data dictionary that will be returned from the

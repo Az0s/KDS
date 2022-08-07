@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/84.44b3b82a.chunk.js","mappings":"wMAMA,UAJc,WACZ,OAAO,kCACR,C","sources":["views/model/Model.js"],"sourcesContent":["import React from 'react'\n\nconst model = () => {\n  return <div>model</div>\n}\n\nexport default model\n"],"names":[],"sourceRoot":""}
