@@ -30,7 +30,6 @@ jobs:
           # - run: rsync -e ssh ./build 80:~/home/contriTemp
           - run: scp -C -r ./build/* tencent:/home/azus/kds/
           # - run: ssh github-actions-tutorial "pm2 reload all"
-  job-2:
     build-and-deploy_mobile:
       runs-on: ubuntu-latest
       defaults:
