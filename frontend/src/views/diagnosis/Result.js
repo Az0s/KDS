@@ -1,4 +1,4 @@
-import { CChartPolarArea, CChartDoughnut } from '@coreui/react-chartjs'
+import { CChartDoughnut } from '@coreui/react-chartjs'
 import {
   CCard,
   CCardHeader,

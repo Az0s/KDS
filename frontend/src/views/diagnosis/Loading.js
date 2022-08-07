@@ -1,17 +1,17 @@
 import React from 'react'
 import {
-  CCard,
-  CCardHeader,
-  CCardBody,
-  CButton,
-  CRow,
-  CCol,
+  // CCard,
+  // CCardHeader,
+  // CCardBody,
+  // CButton,
+  // CRow,
+  // CCol,
   CToast,
   CToastBody,
-  CToastClose,
+  // CToastClose,
   CToastHeader,
   CSpinner,
-  CToaster,
+  // CToaster,
 } from '@coreui/react'
 const Loading = () => {
   return (
