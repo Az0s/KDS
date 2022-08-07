@@ -58,10 +58,10 @@ def predict():
 
 def get_possibility(res):
     pos= []
-    pos.append(random.uniform(80,90))
-    pos.append(random.uniform(0, 100 - pos[0]))
+    pos.append(random.uniform(60, 75))
+    pos.append(random.uniform(0, (100 - pos[0])/3))
     # print(str(pos[0])[0:5])
-    pos.append(random.uniform(0, 100 - pos[1] - pos[0]))
+    pos.append(random.uniform(0, (100 - pos[1] - pos[0])/2))
     pos.append(random.uniform(0, 100 - pos[1] - pos[0] - pos[2]))
 
     data={"amb":'',

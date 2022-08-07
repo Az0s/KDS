@@ -60,6 +60,7 @@ async function warmupModel(session) {
 async function _runModel(session, file, setOutput) {
   // const {width, height} = input;
   console.log(file);
+  // debugger
   const fd = new FormData();
   fd.append("image", file);
   console.log(fd);
