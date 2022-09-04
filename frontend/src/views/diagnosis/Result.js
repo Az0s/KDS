@@ -13,7 +13,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 const Result = (res) => {
   // debugger
-  const [img, setImg] = useState()
+  const [img, setImg] = useState(undefined)
   const form = useSelector((state) => state.form)
   console.log(form)
   let reader = new FileReader()
@@ -47,41 +47,41 @@ const Result = (res) => {
         <CCardBody>
           <CCardTitle>Congrats!</CCardTitle>
           <p className="text-medium-emphasis small">Your image is successfully identified!</p>
-          <CRow>
-            <CCol center md={4} sm={6} xs={10}>
-              <strong>Uploaded image</strong>
-              <hr />
-              <CCard align="center" style={{ margin: '10px' }}>
-                <CCardImage orientation="bottom" src={img} width="10wh" />
-                <CCardBody>
-                  <CCardTitle align="left">{form.name}</CCardTitle>
-                  <CCardText>
-                    <CRow>
-                      <CCol align="left">type:</CCol>
-                      <CCol>
-                        <font color="36A2EB">
-                          <strong>{type}</strong>
-                        </font>
-                      </CCol>
-                    </CRow>
-                    <CRow>
-                      <CCol align="left">Private:</CCol>
-                      <CCol>
-                        <strong>{form.shareSwitch ? 'No' : 'Yes'}</strong>
-                      </CCol>
-                    </CRow>
-                  </CCardText>
-                </CCardBody>
-              </CCard>
-            </CCol>
-            <CCol>
-              <div>
-                <strong>Result</strong>
-                <hr />
-                <CChartDoughnut style={{ width: '18rem' }} data={data} />
-              </div>
-            </CCol>
-          </CRow>
+
+          {/* <strong>Uploaded image</strong>
+          <hr /> */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+            <CCard
+              style={{ margin: '30px', width: '300px', display: 'inline-flex', border: '0px' }}
+            >
+              <CCardImage
+                style={{
+                  borderTopLeftRadius: '3px',
+                  borderTopRightRadius: '3px',
+                  borderBottomLeftRadius: '3px',
+                  borderBottomRightRadius: '3px',
+                }}
+                orientation="bottom"
+                src={img}
+              />
+              <CCardBody style={{ backgroundcolor: 'grey' }}>
+                <CCardTitle align="left">{form.name}</CCardTitle>
+                <CCardText>
+                  <font align="left">Type:</font>
+                  <font color="36A2EB">
+                    <strong align="right">{type}</strong>
+                  </font>
+                  <br />
+
+                  <font align="left">Private:</font>
+                  <strong>{form.shareSwitch ? 'No' : 'Yes'}</strong>
+                </CCardText>
+              </CCardBody>
+            </CCard>
+            {/* <strong>Result</strong>
+            <hr /> */}
+            <CChartDoughnut style={{ display: 'inline-flex', width: '300px' }} data={data} />
+          </div>
         </CCardBody>
       </CCard>
     </div>

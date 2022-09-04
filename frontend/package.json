@@ -4,7 +4,7 @@
   "description": "CoreUI Free React Admin Template",
   "homepage": ".",
   "license": "MIT",
-  "proxy": "http://101.43.232.154:8080/",
+  "proxy": "http://101.43.232.154/",
   "scripts": {
     "build": "react-scripts build",
     "changelog": "auto-changelog --starting-version 4.4.0 --commit-limit false --hide-credit",

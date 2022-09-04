@@ -15,8 +15,13 @@ import {
 } from '@coreui/react'
 const Loading = () => {
   return (
-    <div>
-      <CToast title="Processing" autohide={false} visible={true}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+      <CToast
+        title="Processing"
+        autohide={false}
+        visible={true}
+        style={{ display: 'inline-block' }}
+      >
         <CToastHeader closeButton>
           {/* <svg
             className="rounded me-2"
@@ -29,9 +34,7 @@ const Loading = () => {
           >
             <rect width="100%" height="100%" fill="#007aff"></rect>
           </svg> */}
-          <div style={{ margin: '5px' }}>
-            <CSpinner component="span" size="sm" aria-hidden="true" />
-          </div>
+          <CSpinner style={{ margin: '5px' }} component="span" size="sm" aria-hidden="true" />
 
           <strong className="me-auto"> Processing</strong>
           <small>now</small>
