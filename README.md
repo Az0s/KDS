@@ -23,6 +23,7 @@ npm run start
 ```
 
 ## Dirs 
+```sh
 .  
 ├── README.md  
 ├── backend             --Full backend  
@@ -30,3 +31,4 @@ npm run start
 ├── frontend_mobile     --Mobile frontend   
 ├── pyqt_deploy         --PyQt source file  
 └── server.py           --Entry file for backend server
+```
