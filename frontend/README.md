@@ -19,18 +19,26 @@ CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of 
 
 ## Table of Contents
 
-* [Versions](#versions)
-* [CoreUI Pro](#coreui-pro)
-* [Quick Start](#quick-start)
-* [Installation](#installation)
-* [Basic usage](#basic-usage)
-* [What's included](#whats-included)
-* [Documentation](#documentation)
-* [Versioning](#versioning)
-* [Creators](#creators)
-* [Community](#community)
-* [Support CoreUI Development](#support-coreui-development)
-* [Copyright and License](#copyright-and-license)
+- [CoreUI Free React Admin Template v4](#coreui-free-react-admin-template-v4)
+  - [Table of Contents](#table-of-contents)
+  - [Versions](#versions)
+  - [CoreUI Pro](#coreui-pro)
+  - [Quick Start](#quick-start)
+    - [Installation](#installation)
+    - [Basic usage](#basic-usage)
+      - [Build](#build)
+  - [What's included](#whats-included)
+  - [Documentation](#documentation)
+  - [Versioning](#versioning)
+  - [Creators](#creators)
+  - [Community](#community)
+  - [Support CoreUI Development](#support-coreui-development)
+    - [Platinum Sponsors](#platinum-sponsors)
+    - [Gold Sponsors](#gold-sponsors)
+    - [Silver Sponsors](#silver-sponsors)
+    - [Bronze Sponsors](#bronze-sponsors)
+    - [Backers](#backers)
+  - [Copyright and License](#copyright-and-license)
 
 ## Versions
 
