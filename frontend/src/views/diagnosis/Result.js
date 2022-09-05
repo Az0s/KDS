@@ -1,14 +1,5 @@
 import { CChartDoughnut } from '@coreui/react-chartjs'
-import {
-  CCard,
-  CCardHeader,
-  CCardImage,
-  CCardText,
-  CCardBody,
-  CCol,
-  CRow,
-  CCardTitle,
-} from '@coreui/react'
+import { CCard, CCardHeader, CCardImage, CCardText, CCardBody, CCardTitle } from '@coreui/react'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 const Result = (res) => {
