@@ -12,4 +12,3 @@ test('renders basic submit form', async () => {
   )
   expect(screen.getAllByPlaceholderText('Input Name')).toBeInTheDocument()
 })
- 
