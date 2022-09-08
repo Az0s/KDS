@@ -1,4 +1,3 @@
-
 const { app, BrowserWindow, screen: electronScreen } = require('electron')
 
 const createMainWindow = () => {

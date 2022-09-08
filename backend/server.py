@@ -90,8 +90,8 @@ def sortDic(data):
 def load_checkpoint(filepath):
     checkpoint = torch.load(filepath, map_location=torch.device('cpu'))
 
-    model = checkpoint['model']  # 提取网络结构
-    model.load_state_dict(checkpoint['model_state_dict'])  # 加载网络权重参数
+    model = checkpoint['model']  
+    model.load_state_dict(checkpoint['model_state_dict'])  
     for parameter in model.parameters():
         parameter.requires_grad = False
     model.eval()
