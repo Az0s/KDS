@@ -58,13 +58,13 @@ const Result = (res) => {
               <CCardBody style={{ backgroundcolor: 'grey' }}>
                 <CCardTitle align="left">{form.name}</CCardTitle>
                 <CCardText>
-                  <font align="left">Type:</font>
+                  <font>Type:</font>
                   <font color="36A2EB">
-                    <strong align="right">{type}</strong>
+                    <strong>{type}</strong>
                   </font>
                   <br />
 
-                  <font align="left">Private:</font>
+                  <font>Private:</font>
                   <strong>{form.shareSwitch ? 'No' : 'Yes'}</strong>
                 </CCardText>
               </CCardBody>
